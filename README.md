@@ -21,4 +21,7 @@
 ## Links
 
 [Prometheus](http://localhost:9090/)
+
 [Grafana](http://localhost:3000/) (use admin/admin as user)
+
+[blocky prometheus endpoint](http://localhost:4000/metrics)
