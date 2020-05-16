@@ -1,0 +1,24 @@
+upstream:
+  externalResolvers:
+    - udp:46.182.19.48
+    - udp:80.241.218.68
+conditional:
+  mapping:
+    fritz.box: udp:192.168.178.1
+blocking:
+  blackLists:
+    ads:
+      - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      - https://mirror1.malwaredomains.com/files/justdomains
+      - http://sysctl.org/cameleon/hosts
+      - https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
+      - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+  clientGroupsBlock:
+    default:
+      - ads
+  blockType: zeroIp
+prometheus:
+  enable: true
+port: 53
+httpPort: 4000

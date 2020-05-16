@@ -1,0 +1,9 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'blocky'
+
+    static_configs:
+    - targets: ['blocky:4000']
