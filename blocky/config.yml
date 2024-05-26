@@ -1,12 +1,10 @@
-upstream:
-  externalResolvers:
-    - udp:46.182.19.48
-    - udp:80.241.218.68
-conditional:
-  mapping:
-    fritz.box: udp:192.168.178.1
+upstreams:
+  groups:
+    default:
+      - 46.182.19.48
+      - 80.241.218.68
 blocking:
-  blackLists:
+  denylists:
     ads:
       - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
       - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
@@ -20,5 +18,6 @@ blocking:
   blockType: zeroIp
 prometheus:
   enable: true
-port: 53
-httpPort: 4000
+ports:
+  dns: 53
+  http: 4000
